@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,19 +52,26 @@
     <Compile Include="Code\Factory.cs" />
     <Compile Include="Code\FilesWriterReader.cs" />
     <Compile Include="Code\HttpConnector.cs" />
-    <Compile Include="Code\Interfaces.cs" />
+    <Compile Include="Code\Interfaces\IFilesWriterReader.cs" />
+    <Compile Include="Code\Interfaces\IHtmlParser.cs" />
+    <Compile Include="Code\Interfaces\IHttpConnectror.cs" />
+    <Compile Include="Code\Interfaces\IMp3FilesAdapter.cs" />
     <Compile Include="Code\Mfm20Parser.cs" />
     <Compile Include="Code\Mp3FilesAdapter.cs" />
     <Compile Include="Code\UrlUtils.cs" />
-    <Compile Include="Fakes\HttpFakeConnectorConnectionErrors.cs" />
-    <Compile Include="Fakes\HttpFakeConnectorDownloadStreamError.cs" />
-    <Compile Include="Fakes\HttpTestConnector.cs" />
+    <Compile Include="Code\Fakes\HttpFakeConnectorConnectionErrors.cs" />
+    <Compile Include="Code\Fakes\HttpFakeConnectorDownloadStreamError.cs" />
+    <Compile Include="Code\Fakes\HttpTestConnector.cs" />
+    <Compile Include="App_Start\Testing\RegisterModule_FakeHttp.cs" />
+    <Compile Include="App_Start\Testing\RegisterModule_FakeHttpWithErrors.cs" />
+    <Compile Include="Code\Interfaces\IDownloader.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\RegisterModules.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
@@ -76,6 +86,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

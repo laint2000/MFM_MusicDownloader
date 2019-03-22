@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MfmTop20.Code.Interfaces;
+using System;
 using System.IO;
-using MfmTop20.Code;
 
-namespace MfmTop20.Fakes
+namespace MfmTop20.Code.Fakes
 {
     internal class HttpTestConnector : IHttpConnectror
     {

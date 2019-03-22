@@ -1,5 +1,5 @@
-﻿using System;
-using MfmTop20.Fakes;
+﻿using MfmTop20.Code.Fakes;
+using System;
 
 namespace MfmTop20.Code
 {

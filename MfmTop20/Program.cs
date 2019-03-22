@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MfmTop20.App_Start;
+using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,10 @@ namespace MfmTop20
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            var kernel = new StandardKernel(new RegisterModule());
+            var form = kernel.Get<MainForm>();
+            Application.Run(form);
         }
     }
 }

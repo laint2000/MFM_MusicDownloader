@@ -1,10 +1,8 @@
-﻿using System;
+﻿using MfmTop20.Code.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MfmTop20.Code
 {
@@ -39,9 +37,17 @@ namespace MfmTop20.Code
 
         public List<string> GetMp3FilesList(string mp3Folder)
         {
-            var filesList =  Directory.GetFiles(mp3Folder, "*.mp3").ToList();
-            
-            return filesList.Select(r => Path.GetFileName(r)).ToList();
+            try
+            {
+                var filesList = Directory.GetFiles(mp3Folder, "*.mp3").ToList();
+                return filesList.Select(r => Path.GetFileName(r)).ToList();
+            }
+            catch (Exception)
+            {
+            }
+
+            return new List<string>();            
         }
+
     }
 }

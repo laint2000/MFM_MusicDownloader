@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MfmTop20.Code.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MfmTop20.Code
 {
-    public class Downloader
+    public class Downloader : IDownloader
     {
         private const string MfmTop20Site = "http://mfm.ua/mfm-top-20";
 

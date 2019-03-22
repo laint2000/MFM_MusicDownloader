@@ -1,27 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MfmTop20.Code;
+using MfmTop20.Code.Interfaces;
 
 namespace MfmTop20
 {
     public partial class MainForm : Form
     {
 
-        private readonly Downloader _downloader;
-        public MainForm()
+        private readonly IDownloader _downloader;
+        //private readonly Downloader _downloader;
+        public MainForm(IDownloader downloader)
         {
             InitializeComponent();
 
-            _downloader = Factory.CreateDownloader();
-            //_downloader = Factory.CreateTestDownloader();
+            //_downloader = Factory.CreateDownloader();
+            _downloader = Factory.CreateTestDownloader();
             //_downloader = Factory.CreateTestDownloaderWithErrors();
+
+            _downloader = downloader;
+            if (_downloader == null) {
+                txtConsole.AppendText($"Error => _downloader is empty \r\n");
+                return;
+            }
 
             _downloader.OnNewSongsListGet += downloader_OnNewSongsListGet;
             _downloader.OnDownloadMusicFile += downloader_OnDownloadMusicFile; 

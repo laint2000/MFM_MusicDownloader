@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MfmTop20.Code;
+using MfmTop20.Code.Interfaces;
 using MfmTop20.Code.Tests;
 
 namespace MfmTop20Tests.Code.Fakes

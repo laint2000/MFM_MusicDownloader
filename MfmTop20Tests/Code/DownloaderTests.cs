@@ -1,13 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MfmTop20.Code;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MfmTop20Tests.Code.Fakes;
 using Moq;
+using MfmTop20.Code.Interfaces;
 
 namespace MfmTop20.Code.Tests
 {
