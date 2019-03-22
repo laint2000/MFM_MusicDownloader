@@ -16,7 +16,7 @@ namespace MfmTop20
             InitializeComponent();
 
             //_downloader = Factory.CreateDownloader();
-            _downloader = Factory.CreateTestDownloader();
+            //_downloader = Factory.CreateTestDownloader();
             //_downloader = Factory.CreateTestDownloaderWithErrors();
 
             _downloader = downloader;

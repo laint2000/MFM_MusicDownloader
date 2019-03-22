@@ -1,9 +1,7 @@
 ﻿using MfmTop20.App_Start;
+using MfmTop20.App_Start.Testing;
 using Ninject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MfmTop20
@@ -14,12 +12,13 @@ namespace MfmTop20
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var kernel = new StandardKernel(new RegisterModule());
+            var kernel = NinjectKernel.CreateKernel(args); 
+            //var kernel = new StandardKernel(new RegisterModule());
             var form = kernel.Get<MainForm>();
             Application.Run(form);
         }

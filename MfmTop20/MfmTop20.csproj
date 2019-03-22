@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\NinjectKernel.cs" />
     <Compile Include="Code\Downloader.cs" />
     <Compile Include="Code\Factory.cs" />
     <Compile Include="Code\FilesWriterReader.cs" />
